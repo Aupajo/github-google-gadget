@@ -2,9 +2,9 @@ h1. GitHub Google Gadget
 
 An iGoogle gadget for displaying GitHub repositories.
 
-%{color:red}Works fine, but currently only works with the new <b>gadgets.*</b> api, which is closed to developers.%
+Works fine, but currently only works with the new <b>gadgets.*</b> api, which is closed to developers.
 
-To use it, you need to be using the iGoogle Developer's Sandbox.
+%{color:red}Currently, to use it, you need to be using the "iGoogle Developer's Sandbox":http://www.google.com/ig/sandbox.%
 
 A legacy api port will be coming soon for the general public.
 
