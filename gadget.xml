@@ -66,25 +66,22 @@
         function makeJSONRequest() {
           updateContent("Attempting to retrieve account information&hellip;");
           
-          var params = {};
-          params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-          
-          var prefs = new gadgets.Prefs();
+          var prefs = new _IG_Prefs();
         
-          var url = "http://github.com/api/v1/json/" + gadgets.util.escapeString(prefs.getString('username'));
-          gadgets.io.makeRequest(url, response, params);
+          var url = "http://github.com/api/v1/json/" + _esc(prefs.getString('username'));
+          _IG_FetchFeedAsJSON(url, response);
          };
         
         function updateContent(html) {
           document.getElementById('content').innerHTML = html;
-          gadgets.window.adjustHeight();
+          _IG_AdjustIFrameHeight();
         }
         
         function response(obj) {
           var jsondata = obj.data;
  
           if(jsondata['user'] && jsondata['user']['repositories']) {
-            var prefs = new gadgets.Prefs();
+            var prefs = new _IG_Prefs();
             var limit = parseInt(prefs.getString('display_limit'));
             var repos = jsondata['user']['repositories'];
         
@@ -100,11 +97,11 @@
         
             updateContent(html);
           } else {
-            updateContent('No public repositories found for <b>' + gadgets.util.escapeString(prefs.getString('username')) + '</b>.');
+            updateContent('No public repositories found for <b>' + _esc(prefs.getString('username')) + '</b>.');
           }
         }
          
-         gadgets.util.registerOnLoadHandler(makeJSONRequest);
+         _IG_RegisterOnloadHandler(makeJSONRequest);
          
       </script>
         
