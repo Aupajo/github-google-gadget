@@ -10,8 +10,8 @@ A legacy api port will be coming soon for the general public.
 
 You can test out the gadget by adding:
 
-  http://labs.metanation.com/github-google-gadget/gadget.xml
+http://labs.metanation.com/github-google-gadget/gadget.xml
 
-You should be able to use this link to insta-ad (no guarantees):
+You should be able to use this link to insta-add it (no guarantees):
 
-  http://www.google.co.nz/ig/adde?hl=en&moduleurl=http://labs.metanation.com/github-google-gadget/gadget.xml&source=imag
+http://www.google.co.nz/ig/adde?hl=en&moduleurl=http://labs.metanation.com/github-google-gadget/gadget.xml&source=imag
