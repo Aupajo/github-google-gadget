@@ -1,0 +1,17 @@
+GitHub Google Gadget
+
+An iGoogle gadget for displaying GitHub repositories.
+
+Works fine, but currently only works with the new <b>gadgets.*</b> api, which is closed to developers.
+
+To use it, you need to be using the iGoogle Developer's Sandbox.
+
+A legacy api port will be coming soon for the general public.
+
+You can test out the gadget by adding:
+
+  http://labs.metanation.com/github-google-gadget/gadget.xml
+
+You should be able to use this link to insta-ad (no guarantees):
+
+  http://www.google.co.nz/ig/adde?hl=en&moduleurl=http://labs.metanation.com/github-google-gadget/gadget.xml&source=imag
