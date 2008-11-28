@@ -82,7 +82,7 @@
  
           if(jsondata['user'] && jsondata['user']['repositories']) {
             var prefs = new _IG_Prefs();
-            var limit = parseInt(prefs.getString('display_limit'));
+            var limit = prefs.getInt('display_limit');
             var repos = jsondata['user']['repositories'];
         
             var html = "";
