@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="GitHub"
+  <ModulePrefs directory_title="GitHub Repositories"
+    title="__UP_username__'s GitHub Repositories"
     description="Shows a GitHub user's repositories."
     author="Pete Nicholls"
     author_email="pete@metanation.com"
-    height="60">
+    height="60"
+    screenshot="http://labs.metanation.com/github-google-gadget/screenshot.gif"
+    thumbnail="http://labs.metanation.com/github-google-gadget/logo.gif">
     <Require feature="dynamic-height"/>
   </ModulePrefs>
   <UserPref name="username" required="true" datatype="string" display_name="Account Name" />
@@ -28,7 +31,10 @@
           a:hover { text-decoration: underline; }
        
         
-        #content { font-size: 0.8em; }
+        #content { 
+          font-size: 0.8em;
+          padding: 0.5em 0;
+        }
         
         #content a.repository {
           background: #f0f0f0 url('http://github.com/images/icons/public.png') no-repeat 4px 50%;
@@ -48,17 +54,17 @@
         
        #footer {
          font-size: 0.9em;
-         padding: 0.5em 0.5em 0;
+         margin-top: 0.5em;
          text-align: right;
        }
       </style>
       
-      <div id="content"></div>
+      <div id="content">Loading&hellip;</div>
       
       <script type="text/javascript">
         
         function makeJSONRequest() {
-          updateContent("Attempting to retrieve account information...");
+          updateContent("Attempting to retrieve account information&hellip;");
           
           var params = {};
           params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
@@ -82,9 +88,7 @@
             var limit = parseInt(prefs.getString('display_limit'));
             var repos = jsondata['user']['repositories'];
         
-            var html = '<div id="header">';
-            html += '<b>' + gadgets.util.escapeString(prefs.getString('username')) + "</b>'s repositories:";
-            html += "</div>";
+            var html = "";
             
             for(var i = 0; i < repos.slice(0, limit).length; i++) {
               html += '<a href="' + repos[i]['url'] + '" target="_blank" class="repository">' + repos[i]['name'] + '</a>';
