@@ -83,6 +83,7 @@
           if(responseText == null) {
             updateContent('No public repositories found for <b>' + _esc(prefs.getString('username')) + '</b>.');
           } else {
+            var jsondata = eval('(' + responseText + ')');
             var prefs = new _IG_Prefs();
             var limit = prefs.getInt('display_limit');
             var repos = jsondata['user']['repositories'];
