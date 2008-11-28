@@ -9,13 +9,13 @@
     screenshot="http://labs.metanation.com/github-google-gadget/screenshot.gif"
     thumbnail="http://labs.metanation.com/github-google-gadget/logo.gif">
     <Require feature="dynamic-height"/>
+    <Require feature="analytics" /> 
   </ModulePrefs>
   <UserPref name="username" required="true" datatype="string" display_name="Account Name" />
   <UserPref display_name="Show" name="display_limit" default_value="10" datatype="enum">
    <EnumValue value="5" />
    <EnumValue value="10" />
    <EnumValue value="15" />
-
    <EnumValue value="20" />
    <EnumValue value="50" />
   </UserPref> 
@@ -69,7 +69,8 @@
           var prefs = new _IG_Prefs();
         
           var url = "http://github.com/api/v1/json/" + _esc(prefs.getString('username'));
-          _IG_FetchFeedAsJSON(url, response);
+          _IG_FetchContent(url, response);
+          _IG_Analytics('UA-436998-2', '/legacy-github-google-gadget');
          };
         
         function updateContent(html) {
@@ -77,10 +78,11 @@
           _IG_AdjustIFrameHeight();
         }
         
-        function response(obj) {
-          var jsondata = obj.data;
- 
-          if(jsondata['user'] && jsondata['user']['repositories']) {
+        function response(responseText) {
+          
+          if(responseText == null) {
+            updateContent('No public repositories found for <b>' + _esc(prefs.getString('username')) + '</b>.');
+          } else {
             var prefs = new _IG_Prefs();
             var limit = prefs.getInt('display_limit');
             var repos = jsondata['user']['repositories'];
@@ -96,8 +98,6 @@
             html += '</div>';
         
             updateContent(html);
-          } else {
-            updateContent('No public repositories found for <b>' + _esc(prefs.getString('username')) + '</b>.');
           }
         }
          
