@@ -2,11 +2,24 @@ h1. GitHub Google Gadget
 
 An iGoogle gadget for displaying GitHub repositories.
 
-Works fine, but currently only works with the new <b>gadgets.*</b> api, which is closed to developers.
+"Add to iGoogle":http://www.google.co.nz/ig/adde?hl=en&moduleurl=http://labs.metanation.com/github-google-gadget/legacy.xml&source=imag
 
-%{color:red}Currently, to use it, you need to be using the "iGoogle Developer's Sandbox":http://www.google.com/ig/sandbox.%
+h2. Legacy API Version (Legacy Branch)
 
-A legacy api port will be coming soon for the general public.
+This version is the most compatible, and the one currently supported by the iGoogle homepage.
+
+You can test it out by adding:
+
+"http://labs.metanation.com/github-google-gadget/legacy.xml":http://labs.metanation.com/github-google-gadget/legacy.xml
+
+Insta-add:
+
+"http://www.google.co.nz/ig/adde?hl=en&moduleurl=http://labs.metanation.com/github-google-gadget/legacy.xml&source=imag":http://www.google.co.nz/ig/adde?hl=en&moduleurl=http://labs.metanation.com/github-google-gadget/legacy.xml&source=imag
+
+
+h2. gadgets.* API Version (Master Branch)
+
+To use the gadget, you need to be using the "iGoogle Developer's Sandbox":http://www.google.com/ig/sandbox.%
 
 You can test out the gadget by adding:
 
