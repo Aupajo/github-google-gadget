@@ -4,6 +4,8 @@ An iGoogle gadget for displaying GitHub repositories.
 
 "Add to iGoogle":http://www.google.co.nz/ig/adde?hl=en&moduleurl=http://labs.metanation.com/github-google-gadget/legacy.xml&source=imag
 
+!http://labs.metanation.com/github-google-gadget/screenshot.gif(Screenshot)!
+
 h2. Legacy API Version (Legacy Branch)
 
 This version is the most compatible, and the one currently supported by the iGoogle homepage.
