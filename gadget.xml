@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs directory_title="GitHub Repositories"
-    title="__UP_username__'s GitHub Repositories"
+    title="__UP_username__`s GitHub Repositories"
     description="Shows a GitHub user's repositories."
     author="Aupajo"
     author_email="pete@metanation.com"
